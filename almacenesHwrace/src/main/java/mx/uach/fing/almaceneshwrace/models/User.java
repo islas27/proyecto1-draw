@@ -17,15 +17,19 @@ import javax.persistence.*;
 
 @Entity
 @Table (name ="users")
-public class User {
+public class User  implements ActiveRecord{
     
     @Id
     @GeneratedValue
     private Long id;
     
+    private String name;
+    
+    @Column(unique = true)
     private String email;
     
     private String password;
+    
     
     @Column (name = "is_admin")
     private Boolean isAdmin;
@@ -117,6 +121,41 @@ public class User {
     public void setIsAdmin(Boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+
+    @Override
+    public void create() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(this);
+        em.getTransaction().commit();
+        em.close();
+        
+    }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
+    public static List<User> findByEmail(String email){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        List<User> list;
+        
+        em.getTransaction().begin();
+        Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = %s", email));
+        list = q.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        
+        return list;
+    }
     
 }

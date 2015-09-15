@@ -99,7 +99,6 @@ public class Product {
     public void setPrecio(Float price) {
         this.price = price;
     }
->>>>>>> 362b98ba22764290e2b33b53a587da14b8e356de
 
 
 }

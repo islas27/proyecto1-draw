@@ -108,6 +108,5 @@ public class Order {
     public void setDetails(List<Detail> details) {
         this.details = details;
     }
->>>>>>> 362b98ba22764290e2b33b53a587da14b8e356de
 
 }
