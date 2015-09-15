@@ -2,6 +2,10 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="hwracePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>mx.uach.fing.almaceneshwrace.models.Detail</class>
+    <class>mx.uach.fing.almaceneshwrace.models.Order</class>
+    <class>mx.uach.fing.almaceneshwrace.models.Product</class>
+    <class>mx.uach.fing.almaceneshwrace.models.User</class>
     <properties>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hwrace?zeroDateTimeBehavior=convertToNull"/>
