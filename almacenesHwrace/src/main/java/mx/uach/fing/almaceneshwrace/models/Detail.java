@@ -6,6 +6,7 @@
 
 package mx.uach.fing.almaceneshwrace.models;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -14,7 +15,7 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Detail {
+public class Detail extends ActiveRecord implements Serializable{
     
     @Id
     @GeneratedValue
@@ -96,5 +97,10 @@ public class Detail {
      */
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

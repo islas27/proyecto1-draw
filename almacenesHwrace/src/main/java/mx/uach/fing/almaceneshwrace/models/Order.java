@@ -1,5 +1,6 @@
 package mx.uach.fing.almaceneshwrace.models;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends ActiveRecord implements Serializable{
 
     @Id
     @GeneratedValue
@@ -108,6 +109,11 @@ public class Order {
      */
     public void setDetails(List<Detail> details) {
         this.details = details;
+    }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

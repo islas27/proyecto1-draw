@@ -21,29 +21,29 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "users")
-public class User implements ActiveRecord, Serializable {
-    
+public class User extends ActiveRecord implements Serializable {
+
     @Id
     @GeneratedValue
     private Long id;
-    
+
     private String name;
-    
+
     @Column(unique = true)
     private String email;
-    
+
     private String password;
-    
+
     @Column(name = "is_admin")
     private Boolean isAdmin;
-    
+
     @OneToMany
     private List<Order> orders;
-    
+
     public User() {
         this.orders = new ArrayList();
     }
-    
+
     public User(String email, String password, Boolean isAdmin) {
         this.email = email;
         this.password = password;
@@ -146,23 +146,6 @@ public class User implements ActiveRecord, Serializable {
     public Boolean exist() {
         return this.id == null;
     }
-
-    /**
-     * La funcion create crea al usuario en la base de datos
-     *
-     * @throws DatabaseException si el objeto ya exite en la base de datos
-     */
-    @Override
-    public void create() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
-        EntityManager em = emf.createEntityManager();
-        
-        em.getTransaction().begin();
-        em.persist(this);
-        em.getTransaction().commit();
-        em.close();
-        
-    }
     
     /**
      * La funcion update actualiza al usuario en la base de datos
@@ -174,7 +157,7 @@ public class User implements ActiveRecord, Serializable {
     public void update() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-        
+
         em.getTransaction().begin();
         Query q = em.createQuery("UPDATE User u SET u.email = :email, u.name = :name, u.password = :password, u.isAdmin :isAdmin WHERE u.id :id");
         q.setParameter("name", name);
@@ -187,43 +170,20 @@ public class User implements ActiveRecord, Serializable {
         em.close();
         emf.close();
     }
-    
-    /**
-     * La funcion delete borra al objeto de la base de datos
-     * 
-     * 
-     */
-    @Override
-    public void delete() {
+
+    public static List<User> findByEmail(String email) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-        
-        em.getTransaction().begin();
-        
-        em.remove(this);
-        
-        em.getTransaction().commit();
-        em.close();
-        emf.close();
-    }
-    
-    public static User findByEmail(String email) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
-        EntityManager em = emf.createEntityManager();
-        User user = null;
-        
+        List<User> lista;
+
         em.getTransaction().begin();
         Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = '%s'", email));
-        try {
-            user = (User) q.getResultList().get(0);
-        } catch (Exception ex) {
-            
-        }
+        lista = q.getResultList();
         em.getTransaction().commit();
         em.close();
         emf.close();
-        
-        return user;
+
+        return lista;
     }
-    
+
 }
