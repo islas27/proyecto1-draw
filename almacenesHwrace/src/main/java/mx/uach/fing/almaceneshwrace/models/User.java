@@ -24,7 +24,7 @@ import javax.persistence.*;
 public class User extends ActiveRecord implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;

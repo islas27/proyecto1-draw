@@ -1,7 +1,6 @@
 package mx.uach.fing.almaceneshwrace.handlers.payloads;
 
 import java.util.Map;
-import java.util.Set;
 import mx.uach.fing.almaceneshwrace.handlers.Validable;
 import mx.uach.fing.almaceneshwrace.models.Product;
 
@@ -14,10 +13,10 @@ import mx.uach.fing.almaceneshwrace.models.Product;
  */
 public class NewProductPayload implements Validable{
     
-    Product p = new Product();
+    Product product = new Product();
 
     public NewProductPayload(Map<String, String> data) {
-        
+        product = new Product();
     }
 
     /**
@@ -34,7 +33,12 @@ public class NewProductPayload implements Validable{
      * @param formData as a Set<String> from the Spark.Request
      */
     @Override
-    public void fillObject(Set<String> formData) {
+    public void fillObject(Map<String, String[]> formData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object getData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

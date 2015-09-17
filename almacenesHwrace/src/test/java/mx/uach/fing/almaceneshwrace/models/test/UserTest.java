@@ -39,7 +39,7 @@ public class UserTest {
     
     @Before
     public void setUp() {
-        
+
     }
     
     @After
@@ -54,7 +54,7 @@ public class UserTest {
         em.close();
     }
 
-    @Test 
+    /*@Test 
     public void createUserTest(){
         User u = new User();
         
@@ -80,7 +80,7 @@ public class UserTest {
         
         assertEquals(1, User.findByEmail("chuy@ejemplo.com").size());
     }
-    
+    */
     @Test
     public void UpdateUserTest(){
         User u = new User();

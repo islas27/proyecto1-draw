@@ -35,8 +35,8 @@ public abstract class AbstractRequestHandler <V extends Validable> implements Ro
 
     @Override
     public Object handle(Request request, Response response) throws Exception {
-        if(!request.queryParams().isEmpty()){
-            payload.fillObject(request.queryParams());
+        if(!request.queryMap().toMap().isEmpty()){
+            payload.fillObject(request.queryMap().toMap());
         }
         Map<String, String> queryParams = new HashMap<>();
         Answer answer = process(payload, queryParams);

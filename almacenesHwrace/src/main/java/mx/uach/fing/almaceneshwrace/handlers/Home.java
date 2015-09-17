@@ -1,9 +1,10 @@
 package mx.uach.fing.almaceneshwrace.handlers;
 
-import mx.uach.fing.almaceneshwrace.handlers.handle.LoginPageHandler;
-import mx.uach.fing.almaceneshwrace.handlers.handle.NewProductHandler;
+import mx.uach.fing.almaceneshwrace.handlers.handle.*;
+import static spark.Spark.before;
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.SparkBase.staticFileLocation;
 
 /**
  * Main class of the project. From here spark is going to take control 
@@ -15,25 +16,48 @@ import static spark.Spark.post;
 public class Home {
     
     public static void main(String[] args) {
-        
-        get("/login", new LoginPageHandler());
-        post("/nuevoProducto", new NewProductHandler());
-        post("/registroCliente", (req, res)-> {
-            System.out.println(req.body());
-            return "";
+        staticFileLocation("/public"); // Static files
+        get("/login/:EID", new LoginPageHandler());
+        //post("/inicioSesion", new LoginSessionHandler());
+        post("/inicioSesion", (req, res) -> {
+                System.out.println("email: " + req.queryMap().toMap().get("email")[0]);
+                return "";
         });
-        /*
-	post("/registroCliente");
-        get("/compras/:CID");
-        get("/nuevaCompra");
-	post(" /registrarCompra");
-        get("/pedidos");
-        get("/pedido/:RID");
-	post("/liberarPedido");
-        get("/nuevoProducto");
-	post("registrarProducto");
-        get("/Productos");
-     */   
+        //get("/registrate/:EID", new RegistrationPageHandler());
+        post("/registroCliente", new NewClientHandler());
+        
+        before("/cliente/*", (request, response) -> {
+            // ... check if authenticated
+            
+            response.redirect("/login/01");
+        });
+        
+        //get("/cliente/compras/:CID", new ClientOrderListHandler());
+        //get("/cliente/compra/:OID", new ClientOrderHandler());
+        //get("/cliente/nuevaCompra", new OrderPageHandler());
+	//post("/cliente/registrarCompra", new NewOrderHandler());
+        
+        before("/admin/*", (request, response) -> {
+            // ... check if authenticated
+            
+            response.redirect("/login/01");
+        });
+        
+        //get("/admin/pedidos", new OrderListHandler());
+        //get("/admin/nuevoProducto");
+        //get("/admin/nuevoProducto/:EID");
+        //post("/admin/registrarProducto", new NewProductHandler());
+        //get("/admin/productos");
+        
+        before("/admin/pedido/*", (request, response) -> {
+            // ... check if there's an order with the provided ID
+            
+            response.redirect("/login/01");
+        });
+        
+        //get("/admin/pedido/:RID");
+        //post("/admin/liberarPedido");
+       
     }
     
 }
