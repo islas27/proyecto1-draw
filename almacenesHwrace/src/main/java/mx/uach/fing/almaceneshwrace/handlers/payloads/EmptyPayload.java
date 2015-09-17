@@ -5,7 +5,7 @@
  */
 package mx.uach.fing.almaceneshwrace.handlers.payloads;
 
-import java.util.Set;
+import java.util.Map;
 import mx.uach.fing.almaceneshwrace.handlers.Validable;
 
 /**
@@ -15,13 +15,17 @@ import mx.uach.fing.almaceneshwrace.handlers.Validable;
 public class EmptyPayload implements Validable {
 
     @Override
-    public void fillObject(Set<String> formData) {
-        
+    public void fillObject(Map<String, String[]> formData) {
     }
 
     @Override
     public boolean isValid() {
         return true;
+    }
+
+    @Override
+    public Object getData() {
+        return null;
     }
     
 }

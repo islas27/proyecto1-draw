@@ -1,2 +1,5 @@
 *.jar
 *.class
+almacenesHwrace/target/classes/.netbeans_automatic_build
+almacenesHwrace/target/test-classes/.netbeans_automatic_build
+almacenesHwrace/target/classes/public/

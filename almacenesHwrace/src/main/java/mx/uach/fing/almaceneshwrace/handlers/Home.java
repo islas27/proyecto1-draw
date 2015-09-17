@@ -1,9 +1,11 @@
 package mx.uach.fing.almaceneshwrace.handlers;
 
 import mx.uach.fing.almaceneshwrace.handlers.handle.LoginPageHandler;
+import mx.uach.fing.almaceneshwrace.handlers.handle.NewClientHandler;
 import mx.uach.fing.almaceneshwrace.handlers.handle.NewProductHandler;
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.SparkBase.staticFileLocation;
 
 /**
  * Main class of the project. From here spark is going to take control 
@@ -15,13 +17,10 @@ import static spark.Spark.post;
 public class Home {
     
     public static void main(String[] args) {
-        
+        staticFileLocation("/public"); // Static files
         get("/login", new LoginPageHandler());
         post("/nuevoProducto", new NewProductHandler());
-        post("/registroCliente", (req, res)-> {
-            System.out.println(req.body());
-            return "";
-        });
+        post("/registroCliente", new NewClientHandler());
         /*
 	post("/registroCliente");
         get("/compras/:CID");

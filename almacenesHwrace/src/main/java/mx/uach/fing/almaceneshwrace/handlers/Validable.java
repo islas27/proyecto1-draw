@@ -1,5 +1,6 @@
 package mx.uach.fing.almaceneshwrace.handlers;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -10,6 +11,7 @@ import java.util.Set;
  */
 
 public interface Validable {
-    void fillObject(Set<String> formData);
+    void fillObject(Map<String, String[]> formData);
     boolean isValid();
+    Object getData();
 }

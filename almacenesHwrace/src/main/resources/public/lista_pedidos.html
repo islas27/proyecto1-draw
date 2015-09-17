@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Administrador Lista de Pedidos</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="lista_pedidos.html">
+                    <img src="img/admin.jpg" alt="" height="100px" width="100px">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+			
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>-->
+			
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="img/admin.png" alt="">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h1>HW-Race como Administrador</h1>
+                <p><b>El administrador</b> tiene la tarea de checar que toda orden que se realice
+				se apruebe o desapruebe mediante el protocolo de verificación del mismo.</p>
+                <!--<a class="btn btn-primary btn-lg" href="#">Register now</a>-->
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        
+		<div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Bienvenido a la interfaz de administrador, aquí podrás monitorear las ordenes de todos los clientes.
+					Como administrador tienes que verificar los pedidos hechos y aprobarlos o rechazarlos. Para aprobarlos
+					simplemente concederás la orden y cambiarás su estatus a "liberado", en caso de rechazar la orden solo debes
+					de marcar la orden "rechazada" y de ésta forma no pasará a la siguiente etapa.
+                </div>
+            </div>
+        </div>
+		
+        <!-- /.row -->
+
+        <!-- Content Row -->
+       
+	   <div class="row">
+            <div class="col-md-4">
+                <h2>Lista de artículos pedidos</h2>
+                <p>En la parte de abajo podrás ver la tabla con las órdenes de cada cliente.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Recuerda liberar los pedidos</h2>
+                <p>De ésta forma los clientes podrán realizar sus compras.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Actualizar inventario</h2>
+                <p>Recuerda que debes de tener un orden de lo que tienes y no tienes en el inventario,
+				para abastecer las necesidades de los clientes.</p>
+            </div>
+        </div>
+		
+        <!-- /.row -->
+		<br><br>
+		
+		<table class="table">
+   <caption>Lista de pedidos</caption>
+   <thead>
+      <tr>
+         <th>HRcode</th>
+         <th>Nombre Cliente</th>
+         <th>Estatus de la Compra</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr class="active">
+         <td>#275</td>
+         <td>Elvis Tek</td>
+         <td>Pendiente
+		 <a href="estatus.html"/>
+		 <input type="submit" value="Liberar/Rechazar" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
+		 </td>
+      </tr>
+      <tr class="success">
+         <td>#341</td>
+         <td>Akiles Esquivel Madrazo</td>
+         <td>Liberado</td>
+      </tr>
+      <tr  class="warning">
+         <td>#582</td>
+         <td>Ana Lisa Meltrozo</td>
+         <td>Rechazado</td>
+      </tr>
+      <tr  class="danger">
+         <td>#600</td>
+         <td>Neil Anblomee</td>
+         <td>Pendiente
+		 <a href="estatus.html"/>
+		 <input type="submit" value="Liberar/Rechazar" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
+		 </td>
+      </tr>
+   </tbody>
+</table>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; HW-Race 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@ import java.util.Map;
 import mx.uach.fing.almaceneshwrace.handlers.AbstractRequestHandler;
 import mx.uach.fing.almaceneshwrace.handlers.Answer;
 import mx.uach.fing.almaceneshwrace.handlers.payloads.NewClientPayload;
+import mx.uach.fing.almaceneshwrace.models.User;
 
 /**
  *
@@ -11,9 +12,15 @@ import mx.uach.fing.almaceneshwrace.handlers.payloads.NewClientPayload;
  */
 public class NewClientHandler extends AbstractRequestHandler<NewClientPayload>{
 
+    public NewClientHandler() {
+        payload = new NewClientPayload();
+    }
+
     @Override
     protected Answer processImpl(NewClientPayload Payload, Map<String, String> queryParams) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        User c = (User) this.payload.getData();
+        c.create();
+        return new Answer(200, "ok");
     }
     
 }
