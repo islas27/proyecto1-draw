@@ -91,13 +91,13 @@ public class UserTest {
         u.setIsAdmin(Boolean.FALSE);
         u.create();
         
-        u.setPassword("La super clave indesifrable");
+        u.setPassword("La super clave indecifrable");
         
         assertSame("la super secreta clave", User.findByEmail("chuy@ejemplo.com").get(0).getEmail());
         
         u.update();
         
-        assertSame("La super clave indesifrable", User.findByEmail("chuy@ejemplo.com").get(0).getEmail());
+        assertSame("La super clave indecifrable", User.findByEmail("chuy@ejemplo.com").get(0).getEmail());
     }
     
     @Test ( expected =  DatabaseException.class)

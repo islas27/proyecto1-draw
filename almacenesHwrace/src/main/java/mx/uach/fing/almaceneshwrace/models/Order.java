@@ -111,9 +111,4 @@ public class Order extends ActiveRecord implements Serializable{
         this.details = details;
     }
 
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

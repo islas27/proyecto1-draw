@@ -146,30 +146,6 @@ public class User extends ActiveRecord implements Serializable {
     public Boolean exist() {
         return this.id == null;
     }
-    
-    /**
-     * La funcion update actualiza al usuario en la base de datos
-     *
-     * @throws DatabaseException si el objeto Viola el constraint unique en el
-     * campo email
-     */
-    @Override
-    public void update() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
-        EntityManager em = emf.createEntityManager();
-
-        em.getTransaction().begin();
-        Query q = em.createQuery("UPDATE User u SET u.email = :email, u.name = :name, u.password = :password, u.isAdmin :isAdmin WHERE u.id :id");
-        q.setParameter("name", name);
-        q.setParameter("email", email);
-        q.setParameter("password", password);
-        q.setParameter("isAdmin", isAdmin);
-        q.setParameter("id", id);
-        q.executeUpdate();
-        em.getTransaction().commit();
-        em.close();
-        emf.close();
-    }
 
     public static List<User> findByEmail(String email) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);

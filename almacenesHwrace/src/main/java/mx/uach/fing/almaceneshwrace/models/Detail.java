@@ -98,9 +98,4 @@ public class Detail extends ActiveRecord implements Serializable{
     public void setProduct(Product product) {
         this.product = product;
     }
-
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

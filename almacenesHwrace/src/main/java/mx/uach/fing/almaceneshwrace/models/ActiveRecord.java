@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author jesus
+ * @author Jesus Jose Garcia Pardo
  */
 public abstract class ActiveRecord {
     
@@ -34,7 +34,15 @@ public abstract class ActiveRecord {
 
     }
     
-    public abstract void update();
+    /**
+     * Actualiza el objeto en la base de datos
+     */
+    public void update(){
+        Long id = this.getId();
+        this.delete();
+        this.setId(id);
+        this.create();
+    }
     
     /**
      * La funcion delete borra al objeto de la base de datos
@@ -53,5 +61,8 @@ public abstract class ActiveRecord {
         em.close();
         emf.close();
     }
-
+    
+    public abstract  Long getId();
+    
+    public abstract  void setId(Long id);
 }
