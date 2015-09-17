@@ -21,6 +21,7 @@ public class Order {
     private User customer;
 
     @Column(name = "date_of_delivery")
+    @Temporal(TemporalType.DATE)
     private Date dateOfDelivery;
 
     @Column(name = "is_aprroved")
