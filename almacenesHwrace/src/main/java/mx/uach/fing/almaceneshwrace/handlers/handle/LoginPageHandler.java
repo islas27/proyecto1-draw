@@ -1,7 +1,6 @@
 package mx.uach.fing.almaceneshwrace.handlers.handle;
 
 import java.util.Map;
-import mx.uach.fing.almaceneshwrace.dao.Crud;
 import mx.uach.fing.almaceneshwrace.handlers.AbstractRequestHandler;
 import mx.uach.fing.almaceneshwrace.handlers.Answer;
 import mx.uach.fing.almaceneshwrace.handlers.payloads.EmptyPayload;
@@ -12,8 +11,7 @@ import mx.uach.fing.almaceneshwrace.handlers.payloads.EmptyPayload;
  */
 public class LoginPageHandler extends AbstractRequestHandler<EmptyPayload>{
 
-    public LoginPageHandler(Crud dao) {
-        super(dao);
+    public LoginPageHandler() {
         super.payload = new EmptyPayload();
     }
 

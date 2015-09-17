@@ -2,8 +2,6 @@ package mx.uach.fing.almaceneshwrace.handlers;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-import mx.uach.fing.almaceneshwrace.dao.Crud;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -19,12 +17,10 @@ import spark.Route;
 public abstract class AbstractRequestHandler <V extends Validable> implements Route {
 
     protected V payload;
-    protected Crud c;
 
     private static final int HTTP_BAD_REQUEST = 400;
 
-    public AbstractRequestHandler(Crud dao){
-        this.c = dao;
+    public AbstractRequestHandler(){
     }
     
     protected abstract Answer processImpl(V Payload, Map<String, String> queryParams);
