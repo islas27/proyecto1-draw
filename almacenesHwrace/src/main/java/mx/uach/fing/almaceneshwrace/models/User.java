@@ -182,7 +182,7 @@ public class User implements ActiveRecord, Serializable  {
         List<User> list;
 
         em.getTransaction().begin();
-        Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = %s", email));
+        Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = '%s'", email));
         list = q.getResultList();
         em.getTransaction().commit();
         em.close();
