@@ -33,7 +33,6 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -42,9 +41,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/w2.png" alt="" height="50px" width="150px">
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
+			
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -57,7 +59,16 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a style="border-left-style: none;" href="registro.html">Registration</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+                </ul>
             </div>
+			
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -70,42 +81,54 @@
    <caption>Orders</caption>
    <thead>
       <tr>
-         <th>Name</th>
-         <th>Price $ Dlls</th>
          <th>HRcode</th>
-         <th>Purchase</th>
+         <th>Description</th>
+         <th>Price $ Dlls</th>
+         <th>Cuantity</th>
+         <th>Sub-Total</th>
+         <th></th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td>HDD 2Tb</td>
-         <td>120</td>
          <td>560001</td>
-         <td><a href="#" class="btn btn-primary">Pay</a></td>
+         <td>HDD 2TB</td>
+         <td>120</td>
+         <td>3</td>
+         <td>0</td>
+         <td><button type="button" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="right" title="" data-original-title="Eliminar Materia">x</button></td>
       </tr>
       <tr>
-         <td>USB 1Tb</td>
-         <td>60</td>
          <td>560002</td>
-         <td><a href="#" class="btn btn-primary">Pay</a></td>
+         <td>HDD 2TB</td>
+         <td>120</td>
+         <td>3</td>
+         <td>0</td>
+         <td><button type="button" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="right" title="" data-original-title="Eliminar Materia">x</button></td>
       </tr>
       <tr>
-         <td>Headset Logitech g430</td>
-         <td>80</td>
          <td>560003</td>
-         <td><a href="#" class="btn btn-primary">Pay</a></td>
+         <td>HDD 2TB</td>
+         <td>120</td>
+         <td>3</td>
+         <td>0</td>
+         <td><button type="button" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="right" title="" data-original-title="Eliminar Materia">x</button></td>
       </tr>
       <tr>
-         <td>Logitech Gaming Mouse</td>
-         <td>60</td>
          <td>560004</td>
-         <td><a href="#" class="btn btn-primary">Pay</a></td>
+         <td>HDD 2TB</td>
+         <td>120</td>
+         <td>3</td>
+         <td>0</td>
+         <td><button type="button" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="right" title="" data-original-title="Eliminar Materia">x</button></td>
       </tr>
       <tr>
-         <td>Logitech HD WebCam 21Mpx</td>
-         <td>75</td>
          <td>560005</td>
-         <td><a href="#" class="btn btn-primary">Pay</a></td>
+         <td>HDD 2TB</td>
+         <td>120</td>
+         <td>3</td>
+         <td>0</td>
+         <td><button type="button" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="right" title="" data-original-title="Eliminar Materia">x</button></td>
       </tr>
    </tbody>
 </table>
@@ -127,10 +150,10 @@
                 <div class="thumbnail">
                     <img src="http://placehold.it/800x500" alt="">
                     <div class="caption">
-                        <h3>HDD 2Tb</h3>
+                        <h3>HDD 2TB</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -140,10 +163,10 @@
                 <div class="thumbnail">
                     <img src="http://placehold.it/800x500" alt="">
                     <div class="caption">
-                        <h3>USB 3.0 1Tb</h3>
+                        <h3>USB 3.0 1TB</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -156,7 +179,7 @@
                         <h3>Headset Logitech</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -169,7 +192,7 @@
                         <h3>Mouse Gaming</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -194,7 +217,13 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script type="text/javascript"> 
 
+    	$(document).ready(function() {
+        	$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    	});
+    
+    </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
