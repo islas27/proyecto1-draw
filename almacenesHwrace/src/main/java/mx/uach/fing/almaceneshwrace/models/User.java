@@ -147,6 +147,12 @@ public class User extends ActiveRecord implements Serializable {
         return this.id == null;
     }
 
+    /**
+     * Devuelve una lista de User que tengan el email
+     *
+     * @param email
+     * @return
+     */
     public static List<User> findByEmail(String email) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
@@ -162,4 +168,23 @@ public class User extends ActiveRecord implements Serializable {
         return lista;
     }
 
+    /**
+     * Devuelve una lista de User que tenga el id
+     * @param id
+     * @return 
+     */
+    public static List<User> findById(Long id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        List<User> lista;
+
+        em.getTransaction().begin();
+        Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.id = '%s'", id));
+        lista = q.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+
+        return lista;
+    }
 }

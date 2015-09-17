@@ -7,7 +7,9 @@
 package mx.uach.fing.almaceneshwrace.models;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
+import static mx.uach.fing.almaceneshwrace.models.ActiveRecord.PU;
 
 /**
  *
@@ -46,6 +48,7 @@ public class Detail extends ActiveRecord implements Serializable{
     /**
      * @return the id in the DB if exist or null if it doesn't
      */
+    @Override
     public Long getId() {
         return id;
     }
@@ -53,6 +56,7 @@ public class Detail extends ActiveRecord implements Serializable{
     /**
      * @param id the id to set
      */
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -97,5 +101,25 @@ public class Detail extends ActiveRecord implements Serializable{
      */
     public void setProduct(Product product) {
         this.product = product;
+    }
+    
+    /**
+     * Regresa los detalles que coincidan con una order
+     * @param o
+     * @return 
+     */
+    public static List<Detail> findByOrder( Order o){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        List<Detail> lista;
+        
+        em.getTransaction().begin();
+        Query q = em.createQuery(String.format("SELECT d FROM Detail d WHERE d.order = %s", o.getId()));
+        lista = q.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+        
+        return lista;
     }
 }

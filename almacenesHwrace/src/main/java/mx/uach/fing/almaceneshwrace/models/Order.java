@@ -77,7 +77,7 @@ public class Order extends ActiveRecord implements Serializable{
     }
 
     /**
-     * @param fechaEntrega the fechaEntrega to set
+     * @param dateOfDelivery the dateOfDelivery to set
      */
     public void setDateOfDelivery(Date dateOfDelivery) {
         this.dateOfDelivery = dateOfDelivery;
@@ -110,5 +110,25 @@ public class Order extends ActiveRecord implements Serializable{
     public void setDetails(List<Detail> details) {
         this.details = details;
     }
-
+    
+    /**
+     * Devuelve los Order que tengan un User en comun
+     * @param u
+     * @return 
+     */
+    public static List<Order> findByUser(User u){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        List<Order> lista;
+        
+        em.getTransaction().begin();
+        Query q = em.createQuery(String.format("SELECT o FROM Order o WHERE o.customer = %s", u.getId()));
+        lista = q.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+        
+        return lista;
+    }
+    
 }

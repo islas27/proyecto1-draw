@@ -138,6 +138,12 @@ public class Product extends ActiveRecord implements Serializable {
         return lista;
     }
     
+    /**
+     * La funcion findById devuelve una lista con todos los productos que 
+     * concuerden con el id dado
+     * @param id
+     * @return 
+     */
     public static Product findById(Long id){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
