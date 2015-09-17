@@ -21,6 +21,7 @@ public class Product extends ActiveRecord implements Serializable {
     private String description;
     private Long numberOfStock;
     private Float price;
+    private String categoria;
 
     public Product() {
     }
@@ -103,6 +104,20 @@ public class Product extends ActiveRecord implements Serializable {
     public void setPrecio(Float price) {
         this.price = price;
     }
+    
+    /**
+     * @return the categoria
+     */
+    public String getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * @param categoria the categoria to set
+     */
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     /**
      * la funcion findAll mapea todos los productos de la base de datos
@@ -138,4 +153,6 @@ public class Product extends ActiveRecord implements Serializable {
         
         return p;
     }
+
+    
 }
