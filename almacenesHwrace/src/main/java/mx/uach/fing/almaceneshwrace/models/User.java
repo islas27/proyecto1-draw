@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package mx.uach.fing.almaceneshwrace.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -14,26 +14,24 @@ import javax.persistence.*;
  *
  * @author jesus
  */
-
 @Entity
-@Table (name ="users")
-public class User  implements ActiveRecord{
-    
+@Table(name = "users")
+public class User implements ActiveRecord, Serializable  {
+
     @Id
     @GeneratedValue
     private Long id;
-    
+
     private String name;
-    
+
     @Column(unique = true)
     private String email;
-    
+
     private String password;
-    
-    
-    @Column (name = "is_admin")
+
+    @Column(name = "is_admin")
     private Boolean isAdmin;
-    
+
     @OneToMany
     private List<Order> orders;
 
@@ -47,24 +45,22 @@ public class User  implements ActiveRecord{
         this.isAdmin = isAdmin;
         this.orders = new ArrayList();
     }
-    
+
     /**
-     * 
+     *
      * @return the list of orders that have the user
      */
-    
-    public List<Order> getOrders(){
+    public List<Order> getOrders() {
         return this.orders;
     }
-    
+
     /**
-     * 
-     * @param orders 
+     *
+     * @param orders
      */
-    public void setOrders(List<Order> orders){
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
-    
 
     /**
      * @return the id
@@ -121,41 +117,78 @@ public class User  implements ActiveRecord{
     public void setIsAdmin(Boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+    
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public void create() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-        
+
         em.getTransaction().begin();
         em.persist(this);
         em.getTransaction().commit();
         em.close();
-        
+
     }
 
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+        Query q = em.createQuery("UPDATE User u SET u.email = :email, u.name = :name, u.password = :password, u.isAdmin :isAdmin WHERE u.id :id");
+        q.setParameter("name", name);
+        q.setParameter("email", email);
+        q.setParameter("password", password);
+        q.setParameter("isAdmin", isAdmin);
+        q.setParameter("id", id);
+        q.executeUpdate();
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
     }
 
     @Override
     public void delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+
+        em.remove(this);
+
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
     }
-    
-    public static List<User> findByEmail(String email){
+
+    public static List<User> findByEmail(String email) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
         List<User> list;
-        
+
         em.getTransaction().begin();
         Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = %s", email));
         list = q.getResultList();
         em.getTransaction().commit();
         em.close();
-        
+        emf.close();
+
         return list;
     }
-    
+
 }
