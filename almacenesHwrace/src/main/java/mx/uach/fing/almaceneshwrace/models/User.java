@@ -11,34 +11,39 @@ import java.util.List;
 import javax.persistence.*;
 
 /**
+ * La clase User es un modelo de usuarios para el sistema, el cual implementa el
+ * patron de diseño ActiveRecords, entre los valores esta name, email, password,
+ * isAdim y Orders.
  *
- * @author jesus
+ * @author Jesus Jose Garcia Pardo
+ * @version 1.0
+ * @see Order
  */
 @Entity
 @Table(name = "users")
-public class User implements ActiveRecord, Serializable  {
-
+public class User implements ActiveRecord, Serializable {
+    
     @Id
     @GeneratedValue
     private Long id;
-
+    
     private String name;
-
+    
     @Column(unique = true)
     private String email;
-
+    
     private String password;
-
+    
     @Column(name = "is_admin")
     private Boolean isAdmin;
-
+    
     @OneToMany
     private List<Order> orders;
-
+    
     public User() {
         this.orders = new ArrayList();
     }
-
+    
     public User(String email, String password, Boolean isAdmin) {
         this.email = email;
         this.password = password;
@@ -117,7 +122,7 @@ public class User implements ActiveRecord, Serializable  {
     public void setIsAdmin(Boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
-    
+
     /**
      * @return the name
      */
@@ -132,23 +137,44 @@ public class User implements ActiveRecord, Serializable  {
         this.name = name;
     }
 
+    /**
+     * La funcion exist indica si el objeto existe o no en la base de datos,
+     * regresando un objeto Boolean true o false
+     *
+     * @return Boolean
+     */
+    public Boolean exist() {
+        return this.id == null;
+    }
+
+    /**
+     * La funcion create crea al usuario en la base de datos
+     *
+     * @throws DatabaseException si el objeto ya exite en la base de datos
+     */
     @Override
     public void create() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-
+        
         em.getTransaction().begin();
         em.persist(this);
         em.getTransaction().commit();
         em.close();
-
+        
     }
-
+    
+    /**
+     * La funcion update actualiza al usuario en la base de datos
+     *
+     * @throws DatabaseException si el objeto Viola el constraint unique en el
+     * campo email
+     */
     @Override
     public void update() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-
+        
         em.getTransaction().begin();
         Query q = em.createQuery("UPDATE User u SET u.email = :email, u.name = :name, u.password = :password, u.isAdmin :isAdmin WHERE u.id :id");
         q.setParameter("name", name);
@@ -161,34 +187,43 @@ public class User implements ActiveRecord, Serializable  {
         em.close();
         emf.close();
     }
-
+    
+    /**
+     * La funcion delete borra al objeto de la base de datos
+     * 
+     * 
+     */
     @Override
     public void delete() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-
+        
         em.getTransaction().begin();
-
+        
         em.remove(this);
-
+        
         em.getTransaction().commit();
         em.close();
         emf.close();
     }
-
-    public static List<User> findByEmail(String email) {
+    
+    public static User findByEmail(String email) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
-        List<User> list;
-
+        User user = null;
+        
         em.getTransaction().begin();
         Query q = em.createQuery(String.format("SELECT u FROM User u WHERE u.email = '%s'", email));
-        list = q.getResultList();
+        try {
+            user = (User) q.getResultList().get(0);
+        } catch (Exception ex) {
+            
+        }
         em.getTransaction().commit();
         em.close();
         emf.close();
-
-        return list;
+        
+        return user;
     }
-
+    
 }
