@@ -143,7 +143,7 @@ public class SuperTest {
         o.setDateOfDelivery(new Date(2015, 12, 25));
         o.create();
         
-        p.setCategoria("Discos Duros");
+        p.setCategory("Discos Duros");
         p.setDescription("Sata 150 GB estado solido barato!!!");
         p.setName("Sata 150 GB");
         p.setPrecio(1500.00f);

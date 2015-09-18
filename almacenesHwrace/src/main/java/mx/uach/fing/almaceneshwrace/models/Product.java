@@ -124,9 +124,9 @@ public class Product extends ActiveRecord implements Serializable {
     }
 
     /**
-     * @param categoria the category to set
+     * @param category the category to set
      */
-    public void setCategoria(String category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
@@ -202,7 +202,7 @@ public class Product extends ActiveRecord implements Serializable {
         if (!Objects.equals(this.price, other.price)) {
             return false;
         }
-        if (!Objects.equals(this.categoria, other.categoria)) {
+        if (!Objects.equals(this.category, other.category)) {
             return false;
         }
         return true;

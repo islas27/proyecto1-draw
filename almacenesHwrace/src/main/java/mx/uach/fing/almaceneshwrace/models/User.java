@@ -222,9 +222,6 @@ public class User extends ActiveRecord implements Serializable {
         if (!Objects.equals(this.isAdmin, other.isAdmin)) {
             return false;
         }
-        if (!Objects.equals(this.orders, other.orders)) {
-            return false;
-        }
         return true;
     }
     

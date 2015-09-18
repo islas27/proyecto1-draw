@@ -164,9 +164,6 @@ public class Order extends ActiveRecord implements Serializable{
         if (!Objects.equals(this.isApproved, other.isApproved)) {
             return false;
         }
-        if (!Objects.equals(this.details, other.details)) {
-            return false;
-        }
         return true;
     }
     
