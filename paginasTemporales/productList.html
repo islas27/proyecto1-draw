@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Administrador Lista de Pedidos</title>
+    <title>Administrator Order List</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -59,7 +59,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a style="border-left-style: none;" href="registro.html">Registration</a>
+                        <a style="border-left-style: none;" href="register.html">Registration</a>
                     </li>
                     <li>
                         <a href="login.html">Login</a>
@@ -82,9 +82,9 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-4">
-                <h1>HW-Race como Administrador</h1>
-                <p><b>El administrador</b> tiene la tarea de checar que toda orden que se realice
-				se apruebe o desapruebe mediante el protocolo de verificación del mismo.</p>
+                <h1>HW-Race as Administrator</h1>
+                <p><b>The administrator</b> must check every order made by the costumers and approve or reject each
+				sale, in order to get the order into the final step of selling the items selected by the costumer.</p>
                 <!--<a class="btn btn-primary btn-lg" href="#">Register now</a>-->
             </div>
             <!-- /.col-md-4 -->
@@ -98,10 +98,12 @@
 		<div class="row">
             <div class="col-lg-12">
                 <div class="well text-center">
-                    Bienvenido a la interfaz de administrador, aquí podrás monitorear las ordenes de todos los clientes.
-					Como administrador tienes que verificar los pedidos hechos y aprobarlos o rechazarlos. Para aprobarlos
-					simplemente concederás la orden y cambiarás su estatus a "liberado", en caso de rechazar la orden solo debes
-					de marcar la orden "rechazada" y de ésta forma no pasará a la siguiente etapa.
+                    Welcome to the this interface, here you will be able to check the order requests from every costumer.
+					As and admin. you must verify every order made by all our clients, and also approve or reject each order.
+					The way you can approve a sale you will only get a click on the "approve button"s from the order you
+					want to mark as approved and the status will change into "approved" and by now the costumer will be able to
+					buy the items he/she ordered. And if you do not approve the sale, just click on the "rejected" button
+					and by doing this, the costumer won't be able to buy the items.
                 </div>
             </div>
         </div>
@@ -112,17 +114,17 @@
        
 	   <div class="row">
             <div class="col-md-4">
-                <h2>Lista de artículos pedidos</h2>
-                <p>En la parte de abajo podrás ver la tabla con las órdenes de cada cliente.</p>
+                <h2>Ordered Products List</h2>
+                <p>Below this text you can see a table containing the different orders of each costumer.</p>
             </div>
             <div class="col-md-4">
-                <h2>Recuerda liberar los pedidos</h2>
-                <p>De ésta forma los clientes podrán realizar sus compras.</p>
+                <h2>Remember To Approve The Orders</h2>
+                <p>This way the costumers will have the chance to purchase their items.</p>
             </div>
             <div class="col-md-4">
-                <h2>Actualizar inventario</h2>
-                <p>Recuerda que debes de tener un orden de lo que tienes y no tienes en el inventario,
-				para abastecer las necesidades de los clientes.</p>
+                <h2>Update The Stock</h2>
+                <p>Remember that you should and must have the control of the items available at the stock,
+				this helps you out by avoiding the lack of items at your stck (making some sales unavailable to proceed).</p>
             </div>
         </div>
 		
@@ -130,39 +132,39 @@
 		<br><br>
 		
 		<table class="table">
-   <caption>Lista de pedidos</caption>
+   <caption>Orders List</caption>
    <thead>
       <tr>
          <th>HRcode</th>
-         <th>Nombre Cliente</th>
-         <th>Estatus de la Compra</th>
+         <th>Costumer's Name</th>
+         <th>Sale Status</th>
       </tr>
    </thead>
    <tbody>
       <tr class="active">
          <td>#275</td>
          <td>Elvis Tek</td>
-         <td>Pendiente
-		 <a href="estatus.html"/>
-		 <input type="submit" value="Liberar/Rechazar" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
+         <td>Pending
+		 <a href="status.html"/>
+		 <input type="submit" value="Approve/Reject" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
 		 </td>
       </tr>
       <tr class="success">
          <td>#341</td>
          <td>Akiles Esquivel Madrazo</td>
-         <td>Liberado</td>
+         <td>Approved</td>
       </tr>
       <tr  class="warning">
          <td>#582</td>
          <td>Ana Lisa Meltrozo</td>
-         <td>Rechazado</td>
+         <td>Rejected</td>
       </tr>
       <tr  class="danger">
          <td>#600</td>
          <td>Neil Anblomee</td>
-         <td>Pendiente
-		 <a href="estatus.html"/>
-		 <input type="submit" value="Liberar/Rechazar" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
+         <td>Pending
+		 <a href="status.html"/>
+		 <input type="submit" value="Approve/Reject" class="pass-reset-submit btn btn-default btn-sm btn-mini button"/>
 		 </td>
       </tr>
    </tbody>
