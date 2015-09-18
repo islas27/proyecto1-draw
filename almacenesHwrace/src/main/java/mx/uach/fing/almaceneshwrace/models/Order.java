@@ -16,6 +16,7 @@ public class Order extends ActiveRecord implements Serializable{
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne

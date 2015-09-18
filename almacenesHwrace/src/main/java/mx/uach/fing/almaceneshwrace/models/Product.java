@@ -32,7 +32,7 @@ public class Product extends ActiveRecord implements Serializable {
     private Float price;
     
     @Column(name = "categoria")
-    private String categoria;
+    private String category;
 
     public Product() {
     }
@@ -117,17 +117,17 @@ public class Product extends ActiveRecord implements Serializable {
     }
     
     /**
-     * @return the categoria
+     * @return the category
      */
-    public String getCategoria() {
-        return categoria;
+    public String getCategory() {
+        return category;
     }
 
     /**
-     * @param categoria the categoria to set
+     * @param categoria the category to set
      */
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoria(String category) {
+        this.category = category;
     }
 
     /**
