@@ -60,7 +60,6 @@ public class Home {
         
         //get("/admin/pedido/:RID");
         //post("/admin/liberarPedido");
-        
     }
     
 }
