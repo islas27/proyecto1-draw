@@ -1,6 +1,7 @@
 package mx.uach.fing.almaceneshwrace.handlers;
 
 import mx.uach.fing.almaceneshwrace.handlers.handle.*;
+import mx.uach.fing.almaceneshwrace.models.User;
 import static spark.Spark.before;
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -16,20 +17,17 @@ import static spark.SparkBase.staticFileLocation;
 public class Home {
     
     public static void main(String[] args) {
+        
         staticFileLocation("/public"); // Static files
         get("/login/:EID", new LoginPageHandler());
-        //post("/inicioSesion", new LoginSessionHandler());
-        post("/inicioSesion", (req, res) -> {
-                System.out.println("email: " + req.queryMap().toMap().get("email")[0]);
-                return "";
-        });
+        post("/inicioSesion", new LoginSessionHandler());
         //get("/registrate/:EID", new RegistrationPageHandler());
         post("/registroCliente", new NewClientHandler());
         
         before("/cliente/*", (request, response) -> {
             // ... check if authenticated
             
-            response.redirect("/login/01");
+            //response.redirect("/login/01");
         });
         
         //get("/cliente/compras/:CID", new ClientOrderListHandler());
@@ -40,7 +38,7 @@ public class Home {
         before("/admin/*", (request, response) -> {
             // ... check if authenticated
             
-            response.redirect("/login/01");
+            //response.redirect("/login/01");
         });
         
         //get("/admin/pedidos", new OrderListHandler());
@@ -52,7 +50,7 @@ public class Home {
         before("/admin/pedido/*", (request, response) -> {
             // ... check if there's an order with the provided ID
             
-            response.redirect("/login/01");
+            //response.redirect("/login/01");
         });
         
         //get("/admin/pedido/:RID");

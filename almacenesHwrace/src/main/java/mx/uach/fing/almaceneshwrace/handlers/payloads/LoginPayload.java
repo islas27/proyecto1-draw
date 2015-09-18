@@ -1,5 +1,6 @@
 package mx.uach.fing.almaceneshwrace.handlers.payloads;
 
+import java.util.HashMap;
 import java.util.Map;
 import mx.uach.fing.almaceneshwrace.handlers.Validable;
 
@@ -23,8 +24,6 @@ public class LoginPayload implements Validable {
                 null : formData.get("email")[0];
         password = ("".equals(formData.get("password")[0])) ? 
                 null : formData.get("password")[0];
-        data.put("email", email);
-        data.put("password", password);
     }
 
     @Override
@@ -32,6 +31,9 @@ public class LoginPayload implements Validable {
         if(email == null || password == null){
             return false;
         }
+        data = new HashMap<>();
+        data.put("email", email);
+        data.put("password", password);
         return true;
     }
 
