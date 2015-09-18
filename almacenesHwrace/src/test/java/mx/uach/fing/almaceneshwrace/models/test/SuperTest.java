@@ -6,27 +6,31 @@
 
 package mx.uach.fing.almaceneshwrace.models.test;
 
+import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import static mx.uach.fing.almaceneshwrace.models.ActiveRecord.PU;
+import mx.uach.fing.almaceneshwrace.models.Detail;
+import mx.uach.fing.almaceneshwrace.models.Order;
+import mx.uach.fing.almaceneshwrace.models.Product;
 import mx.uach.fing.almaceneshwrace.models.User;
 import org.eclipse.persistence.exceptions.DatabaseException;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author jesus
  */
-public class UserTest {
+public class SuperTest {
     
-    public UserTest() {
+    public SuperTest() {
     }
     
     @BeforeClass
@@ -122,8 +126,36 @@ public class UserTest {
     }
     
     @Test
-    public void DeleteUser(){}
-    
-    @Test ( expected =  javax.persistence.RollbackException.class)
-    public void DeleteUserFail(){}
+    public void SuperTest()
+    {
+        User u = new User();
+        Order o = new Order();
+        Product p = new Product();
+        Detail d = new Detail();
+        
+        u.setEmail("chuy@ejemplo.com");
+        u.setName("Jesus Garcia");
+        u.setPassword("la super secreta clave");
+        u.setIsAdmin(Boolean.FALSE);
+        u.create();
+        
+        o.setCustomer(u);
+        o.setDateOfDelivery(new Date(2015, 12, 25));
+        o.create();
+        
+        p.setCategoria("Discos Duros");
+        p.setDescription("Sata 150 GB estado solido barato!!!");
+        p.setName("Sata 150 GB");
+        p.setPrecio(1500.00f);
+        p.setNumberOfStock(100l);
+        p.create();
+        
+        d.setOrder(o);
+        d.setProduct(p);
+        d.setQuantity(4l);
+        d.create();
+        
+        assertEquals(d, (Detail)Detail.findByOrder(o).get(0));
+        assertEquals(o, (Order)Order.findByUser(u).get(0));
+    }
 }

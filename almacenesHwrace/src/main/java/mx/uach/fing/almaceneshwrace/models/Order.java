@@ -3,6 +3,7 @@ package mx.uach.fing.almaceneshwrace.models;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -32,6 +33,7 @@ public class Order extends ActiveRecord implements Serializable{
     private List<Detail> details;
 
     public Order() {
+        this.isApproved = false;
     }
 
     public Order(User customer, Date dateOfDelivery, List<Detail> details) {
@@ -44,6 +46,7 @@ public class Order extends ActiveRecord implements Serializable{
     /**
      * @return the id
      */
+    @Override
     public Long getId() {
         return id;
     }
@@ -51,6 +54,7 @@ public class Order extends ActiveRecord implements Serializable{
     /**
      * @param id the id to set
      */
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -130,5 +134,41 @@ public class Order extends ActiveRecord implements Serializable{
         
         return lista;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Order other = (Order) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.customer, other.customer)) {
+            return false;
+        }
+        if (!Objects.equals(this.dateOfDelivery, other.dateOfDelivery)) {
+            return false;
+        }
+        if (!Objects.equals(this.isApproved, other.isApproved)) {
+            return false;
+        }
+        if (!Objects.equals(this.details, other.details)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }

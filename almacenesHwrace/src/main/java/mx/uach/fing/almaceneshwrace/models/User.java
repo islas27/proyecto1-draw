@@ -8,6 +8,7 @@ package mx.uach.fing.almaceneshwrace.models;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -187,4 +188,43 @@ public class User extends ActiveRecord implements Serializable {
 
         return lista;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final User other = (User) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.password, other.password)) {
+            return false;
+        }
+        if (!Objects.equals(this.isAdmin, other.isAdmin)) {
+            return false;
+        }
+        if (!Objects.equals(this.orders, other.orders)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
