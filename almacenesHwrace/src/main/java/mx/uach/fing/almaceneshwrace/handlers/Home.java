@@ -54,7 +54,7 @@ public class Home {
         //get("/admin/orderList", new OrderListHandler());
         //get("/admin/registerProduct");
         post("/admin/createProduct", new NewProductHandler());
-        //get("/admin/productList");
+        get("/admin/productList", new ListProductHandler());
 
         
         before("/admin/orderStatus/:orderId", (request, response) -> {
