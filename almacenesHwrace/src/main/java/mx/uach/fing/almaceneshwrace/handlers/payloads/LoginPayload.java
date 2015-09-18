@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.uach.fing.almaceneshwrace.handlers.payloads;
 
 import java.util.Map;
 import mx.uach.fing.almaceneshwrace.handlers.Validable;
-import mx.uach.fing.almaceneshwrace.models.User;
 
 /**
  *
@@ -15,12 +9,11 @@ import mx.uach.fing.almaceneshwrace.models.User;
  */
 public class LoginPayload implements Validable {
 
-    User u;
+    Map <String, String> data;
     String email;
     String password;
 
     public LoginPayload() {
-        u = new User();
     }
 
     @Override
@@ -30,6 +23,8 @@ public class LoginPayload implements Validable {
                 null : formData.get("email")[0];
         password = ("".equals(formData.get("password")[0])) ? 
                 null : formData.get("password")[0];
+        data.put("email", email);
+        data.put("password", password);
     }
 
     @Override
@@ -42,7 +37,7 @@ public class LoginPayload implements Validable {
 
     @Override
     public Object getData() {
-        return this;
+        return data;
     }
 
 }
