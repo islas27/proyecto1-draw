@@ -18,6 +18,6 @@ public class NewProductHandler extends AbstractRequestHandler<NewProductPayload>
     protected Answer processImpl(NewProductPayload value, Map<String, String> queryParams) {
         //Here we do the actual process of the petition, if the payload
         //is valid, else, we return another response.
-        return Answer.ok("Body to give to the response");
+        return new Answer(200);
     }
 }
