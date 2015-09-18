@@ -16,12 +16,12 @@ import javax.persistence.Persistence;
  */
 public abstract class ActiveRecord {
     
-    public static final String PU = "";
+    public static final String PU = "hwracePU";
     
     /**
      * La funcion create crea al objeto en la base de datos
      *
-     * @throws DatabaseException si el objeto ya exite en la base de datos
+     * @throws javax.persistence.RollbackException si el objeto ya exite en la base de datos
      */
     public void create() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
@@ -35,19 +35,28 @@ public abstract class ActiveRecord {
     }
     
     /**
-     * Actualiza el objeto en la base de datos
+     * La funcion update actualiza al objeto en la base de datos
+     * 
+     * @throws javax.persistence.RollbackException si el objeto viola algun constraint
      */
     public void update(){
-        Long id = this.getId();
-        this.delete();
-        this.setId(id);
-        this.create();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        
+        em.merge(this);
+        
+        em.getTransaction().commit();
+        
+        em.close();
+        emf.close();
     }
     
     /**
      * La funcion delete borra al objeto de la base de datos
      *
-     *
+     *@throws javax.persistence.RollbackException si el objeto ya no exite en la base de datos
      */
     public void delete() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);

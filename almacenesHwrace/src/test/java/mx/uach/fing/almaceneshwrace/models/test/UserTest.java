@@ -48,13 +48,13 @@ public class UserTest {
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        Query q = em.createQuery("DELETE User u");
+        Query q = em.createQuery("DELETE FROM User u");
         q.executeUpdate();
         em.getTransaction().commit();
         em.close();
     }
 
-    /*@Test 
+    @Test 
     public void createUserTest(){
         User u = new User();
         
@@ -64,10 +64,10 @@ public class UserTest {
         u.setIsAdmin(Boolean.FALSE);
         u.create();
         
-        assertEquals(1, User.findByEmail("chuy@ejemplo.com").size());
+        assertEquals(1, User.findByEmail("Iperez@ejemplo.com").size());
     }
     
-    @Test ( expected =  DatabaseException.class)
+    @Test ( expected =  javax.persistence.RollbackException.class)
     public void createUserTestFail(){
         User u = new User();
         u.setEmail("chuy@ejemplo.com");
@@ -80,7 +80,7 @@ public class UserTest {
         
         assertEquals(1, User.findByEmail("chuy@ejemplo.com").size());
     }
-    */
+    
     @Test
     public void UpdateUserTest(){
         User u = new User();
@@ -93,14 +93,14 @@ public class UserTest {
         
         u.setPassword("La super clave indecifrable");
         
-        assertSame("la super secreta clave", User.findByEmail("chuy@ejemplo.com").get(0).getEmail());
+        assertSame("la super secreta clave", User.findByEmail("chuy@ejemplo.com").get(0).getPassword());
         
         u.update();
         
-        assertSame("La super clave indecifrable", User.findByEmail("chuy@ejemplo.com").get(0).getEmail());
+        assertSame("La super clave indecifrable", User.findByEmail("chuy@ejemplo.com").get(0).getPassword());
     }
     
-    @Test ( expected =  DatabaseException.class)
+    @Test ( expected =  javax.persistence.RollbackException.class)
     public void UpdateUserFail(){
         User u = new User();
         User v = new User();
@@ -120,4 +120,10 @@ public class UserTest {
         u.setEmail("jgarcia@ejemplo.com");
         u.update();
     }
+    
+    @Test
+    public void DeleteUser(){}
+    
+    @Test ( expected =  javax.persistence.RollbackException.class)
+    public void DeleteUserFail(){}
 }

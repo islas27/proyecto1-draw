@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="mx.uach.fing.almaceneshwrace.models.test.UserTest" time="9.14" errors="1" skipped="0">
+<testsuite tests="6" failures="1" name="mx.uach.fing.almaceneshwrace.models.test.UserTest" time="8.787" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/i386"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.60-b23"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.country" value="MX"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="test" value="mx.uach.fing.almaceneshwrace.models.test.UserTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/jesus/Documentos/Proyectos/proyecto1-draw/almacenesHwrace"/>
+    <property name="user.dir" value="/home/jepardo/Documentos/Proyectos/proyecto1-draw/almacenesHwrace"/>
     <property name="java.runtime.version" value="1.8.0_60-b27"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
-    <property name="os.arch" value="i386"/>
+    <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="maven.ext.class.path" value="/home/jesus/netbeans-8.0/java/maven-nblib/netbeans-eventspy.jar"/>
-    <property name="classworlds.conf" value="/home/jesus/netbeans-8.0/java/maven/bin/m2.conf"/>
+    <property name="maven.ext.class.path" value="/home/jepardo/netbeans-8.0/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="/home/jepardo/netbeans-8.0/java/maven/bin/m2.conf"/>
     <property name="netbeansProjectMappings" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64:/usr/lib/jvm/java-8-oracle/jre/lib/i386::/usr/java/packages/lib/i386:/lib:/usr/lib"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64:/usr/lib/jvm/java-8-oracle/jre/lib/i386::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
-    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
-    <property name="os.version" value="3.13.0-63-generic"/>
-    <property name="user.home" value="/home/jesus"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="3.19.0-28-generic"/>
+    <property name="user.home" value="/home/jepardo"/>
     <property name="user.timezone" value="America/Chihuahua"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="jesus"/>
-    <property name="java.class.path" value="/home/jesus/netbeans-8.0/java/maven/boot/plexus-classworlds-2.4.jar"/>
+    <property name="user.name" value="jepardo"/>
+    <property name="java.class.path" value="/home/jepardo/netbeans-8.0/java/maven/boot/plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
-    <property name="sun.arch.data.model" value="32"/>
+    <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=mx.uach.fing.almaceneshwrace.models.test.UserTest -DnetbeansProjectMappings= -Dmaven.ext.class.path=/home/jesus/netbeans-8.0/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=mx.uach.fing.almaceneshwrace.models.test.UserTest -DnetbeansProjectMappings= -Dmaven.ext.class.path=/home/jepardo/netbeans-8.0/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -54,29 +54,24 @@
     <property name="securerandom.source" value="file:/dev/./urandom"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/home/jesus/netbeans-8.0/java/maven"/>
+    <property name="maven.home" value="/home/jepardo/netbeans-8.0/java/maven"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="createUserTestFail" time="8.503"/>
-  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="createUserTest" time="0.126">
-    <error message="Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
-Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-Error Code: 1062
-Call: INSERT INTO users (ID, EMAIL, is_admin, NAME, PASSWORD) VALUES (?, ?, ?, ?, ?)
-	bind =&gt; [5 parameters bound]
-Query: InsertObjectQuery(mx.uach.fing.almaceneshwrace.models.User@19111ba)" type="javax.persistence.RollbackException">javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
-Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-Error Code: 1062
-Call: INSERT INTO users (ID, EMAIL, is_admin, NAME, PASSWORD) VALUES (?, ?, ?, ?, ?)
-	bind =&gt; [5 parameters bound]
-Query: InsertObjectQuery(mx.uach.fing.almaceneshwrace.models.User@19111ba)
-	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
-	at mx.uach.fing.almaceneshwrace.models.User.create(User.java:142)
-	at mx.uach.fing.almaceneshwrace.models.test.UserTest.createUserTest(UserTest.java:53)
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="DeleteUser" time="8.127"/>
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="UpdateUserFail" time="0.346"/>
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="UpdateUserTest" time="0.087">
+    <error message="An exception occurred while creating a query in EntityManager: 
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;chuy@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;chuy@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression.
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1605)
+	at mx.uach.fing.almaceneshwrace.models.User.findByEmail(User.java:162)
+	at mx.uach.fing.almaceneshwrace.models.test.UserTest.UpdateUserTest(UserTest.java:96)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,72 +105,107 @@ Query: InsertObjectQuery(mx.uach.fing.almaceneshwrace.models.User@19111ba)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
-Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-Error Code: 1062
-Call: INSERT INTO users (ID, EMAIL, is_admin, NAME, PASSWORD) VALUES (?, ?, ?, ?, ?)
-	bind =&gt; [5 parameters bound]
-Query: InsertObjectQuery(mx.uach.fing.almaceneshwrace.models.User@19111ba)
-	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
-	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
-	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
-	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:631)
-	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:558)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2002)
-	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:298)
-	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:242)
-	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:228)
-	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:377)
-	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:165)
-	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:180)
-	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:489)
-	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
-	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
-	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:301)
-	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
-	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:899)
-	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:798)
-	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
-	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1804)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1786)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1737)
-	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:226)
-	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:125)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4207)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1441)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1531)
-	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:277)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1169)
-	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:132)
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.JPQLException
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;chuy@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression.
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:155)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:334)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:278)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:163)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:116)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.&lt;init&gt;(EJBQueryImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.&lt;init&gt;(EJBQueryImpl.java:86)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1603)
 	... 35 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
-	at com.mysql.jdbc.Util.getInstance(Util.java:383)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:973)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2447)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2594)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1901)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2113)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2049)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2034)
-	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
-	... 66 more
 </error>
-    <system-out>[EL Warning]: 2015-09-16 20:39:43.67--UnitOfWork(27478822)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
-Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-Error Code: 1062
-Call: INSERT INTO users (ID, EMAIL, is_admin, NAME, PASSWORD) VALUES (?, ?, ?, ?, ?)
-	bind =&gt; [5 parameters bound]
-Query: InsertObjectQuery(mx.uach.fing.almaceneshwrace.models.User@19111ba)
-</system-out>
+  </testcase>
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="createUserTestFail" time="0.062"/>
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="createUserTest" time="0.068">
+    <error message="An exception occurred while creating a query in EntityManager: 
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;Iperez@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: An exception occurred while creating a query in EntityManager: 
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;Iperez@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression.
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1605)
+	at mx.uach.fing.almaceneshwrace.models.User.findByEmail(User.java:162)
+	at mx.uach.fing.almaceneshwrace.models.test.UserTest.createUserTest(UserTest.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: Exception [EclipseLink-0] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.JPQLException
+Exception Description: Syntax error parsing [SELECT u FROM User u LEFT OUTER JOIN u.order WHERE u.email = &apos;Iperez@ejemplo.com&apos;]. 
+[45, 45] An identification variable must be defined for a JOIN expression.
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildException(HermesParser.java:155)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.validate(HermesParser.java:334)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.populateQueryImp(HermesParser.java:278)
+	at org.eclipse.persistence.internal.jpa.jpql.HermesParser.buildQuery(HermesParser.java:163)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:142)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.buildEJBQLDatabaseQuery(EJBQueryImpl.java:116)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.&lt;init&gt;(EJBQueryImpl.java:102)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.&lt;init&gt;(EJBQueryImpl.java:86)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.createQuery(EntityManagerImpl.java:1603)
+	... 35 more
+</error>
+  </testcase>
+  <testcase classname="mx.uach.fing.almaceneshwrace.models.test.UserTest" name="DeleteUserFail" time="0.008">
+    <failure message="Expected exception: javax.persistence.RollbackException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: javax.persistence.RollbackException
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
   </testcase>
 </testsuite>
