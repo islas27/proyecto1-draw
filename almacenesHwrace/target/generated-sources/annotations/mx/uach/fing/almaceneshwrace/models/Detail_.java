@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import mx.uach.fing.almaceneshwrace.models.Order;
 import mx.uach.fing.almaceneshwrace.models.Product;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-17T02:11:00")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-18T00:10:19")
 @StaticMetamodel(Detail.class)
 public class Detail_ { 
 

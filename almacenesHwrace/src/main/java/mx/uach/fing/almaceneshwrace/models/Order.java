@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Order extends ActiveRecord implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -27,7 +27,7 @@ public class Order extends ActiveRecord implements Serializable{
     @Temporal(TemporalType.DATE)
     private Date dateOfDelivery;
 
-    @Column(name = "is_aprroved")
+    @Column(name = "is_approved")
     private Boolean isApproved;
 
     @OneToMany
@@ -128,6 +128,26 @@ public class Order extends ActiveRecord implements Serializable{
         
         em.getTransaction().begin();
         Query q = em.createQuery(String.format("SELECT o FROM Order o WHERE o.customer = %s", u.getId()));
+        lista = q.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+        
+        return lista;
+    }
+
+    /**
+     * Devuelve los Order que tengan la misma id
+     * @param u
+     * @return 
+     */
+    public static List<Order> findByUser(Long id){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+        EntityManager em = emf.createEntityManager();
+        List<Order> lista;
+        
+        em.getTransaction().begin();
+        Query q = em.createQuery(String.format("SELECT o FROM Order o WHERE o.id = %s", id));
         lista = q.getResultList();
         em.getTransaction().commit();
         em.close();

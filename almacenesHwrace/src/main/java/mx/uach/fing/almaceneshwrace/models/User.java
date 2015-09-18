@@ -7,7 +7,7 @@ package mx.uach.fing.almaceneshwrace.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.Objects;
 import javax.persistence.*;
 
@@ -53,6 +53,12 @@ public class User extends ActiveRecord implements Serializable {
         this.password = password;
         this.isAdmin = isAdmin;
         this.orders = new ArrayList();
+    }
+    
+    public User(Map<String, String> map){
+        this.email = map.get("email");
+        this.password = map.get("password");
+        this.isAdmin = Boolean.getBoolean(map.get("isAdmin"));
     }
 
     /**

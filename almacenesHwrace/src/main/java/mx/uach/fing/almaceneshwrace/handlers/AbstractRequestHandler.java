@@ -5,6 +5,7 @@ import java.util.Map;
 import spark.Request;
 import spark.Response;
 import spark.Route;
+import spark.Session;
 
 /**
  * This abstract class is from where we'll separate the business logic 
@@ -13,10 +14,13 @@ import spark.Route;
  * Created Sept 12 2015 @ 09:11 AM
  * @author Jonathan
  * @version 1.0
+ * @param <V> Object that implements the interface Validable
  */
 public abstract class AbstractRequestHandler <V extends Validable> implements Route {
 
     protected V payload;
+    protected Session s;
+    protected Response r;
 
     private static final int HTTP_BAD_REQUEST = 400;
 
@@ -35,6 +39,8 @@ public abstract class AbstractRequestHandler <V extends Validable> implements Ro
 
     @Override
     public Object handle(Request request, Response response) throws Exception {
+        s = request.session(true);
+        r = response;
         if(!request.queryMap().toMap().isEmpty()){
             payload.fillObject(request.queryMap().toMap());
         }
