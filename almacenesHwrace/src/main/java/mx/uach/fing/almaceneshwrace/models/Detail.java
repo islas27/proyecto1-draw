@@ -18,12 +18,15 @@ import static mx.uach.fing.almaceneshwrace.models.ActiveRecord.PU;
  */
 
 @Entity
+@Table(name = "details")
 public class Detail extends ActiveRecord implements Serializable{
     
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
     
+    @Column(name = "quantity")
     private Long quantity;
     
     @ManyToOne

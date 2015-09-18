@@ -26,13 +26,16 @@ public class User extends ActiveRecord implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "email")
     private String email;
 
+    @Column(name = "password")
     private String password;
 
     @Column(name = "is_admin")
@@ -139,8 +142,7 @@ public class User extends ActiveRecord implements Serializable {
     }
 
     /**
-     * La funcion exist indica si el objeto existe o no en la base de datos,
-     * regresando un objeto Boolean true o false
+     * Return true if exist in the DB.
      *
      * @return Boolean
      */
@@ -170,9 +172,9 @@ public class User extends ActiveRecord implements Serializable {
     }
 
     /**
-     * Devuelve una lista de User que tenga el id
+     * 
      * @param id
-     * @return 
+     * @returna list 
      */
     public static List<User> findById(Long id) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);

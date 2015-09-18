@@ -16,12 +16,22 @@ public class Product extends ActiveRecord implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
     private String name;
+    
+    @Column(name = "description")
     private String description;
+    
+    @Column(name = "number_of_stock")
     private Long numberOfStock;
+    
+    @Column(name = "price")
     private Float price;
+    
+    @Column(name = "categoria")
     private String categoria;
 
     public Product() {
