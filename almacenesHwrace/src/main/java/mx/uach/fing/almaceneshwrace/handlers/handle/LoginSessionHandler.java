@@ -46,7 +46,7 @@ public class LoginSessionHandler extends AbstractRequestHandler<LoginPayload> {
                 System.out.println(
                         String.format("User %s logged in at date: %s /n",
                                 u.getEmail(), s.attribute("date_login")));
-                r.redirect((u.getIsAdmin()) ? "/admin/orderList" : "/clients/shoppingOrder/");
+                r.redirect((u.getIsAdmin()) ? "/admin/orderList" : "/clients/shoppingOrders");
                 return new Answer(303);
             }            
         }

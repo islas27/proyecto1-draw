@@ -20,6 +20,6 @@ public class ListProductHandler extends AbstractRequestHandler<EmptyPayload> {
         super.payload = new EmptyPayload();
     }
     protected Answer processImpl(EmptyPayload Payload, Map<String, String> queryParams) {
-        
+        return new Answer(200);
     }
 }

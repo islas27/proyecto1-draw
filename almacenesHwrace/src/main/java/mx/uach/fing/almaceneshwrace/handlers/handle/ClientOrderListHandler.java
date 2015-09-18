@@ -20,6 +20,7 @@ import mx.uach.fing.almaceneshwrace.handlers.Answer;
 import mx.uach.fing.almaceneshwrace.handlers.FMConfig;
 import mx.uach.fing.almaceneshwrace.handlers.payloads.EmptyPayload;
 import mx.uach.fing.almaceneshwrace.models.Order;
+import mx.uach.fing.almaceneshwrace.models.User;
 
 /**
  *
@@ -27,7 +28,15 @@ import mx.uach.fing.almaceneshwrace.models.Order;
  */
 public class ClientOrderListHandler extends AbstractRequestHandler<EmptyPayload>{
     
-    List<Order> lo;
+    List<Order> orders;
+    String username;
+    User u;
+
+    public ClientOrderListHandler() {
+        payload = new EmptyPayload();
+    }
+    
+    
 
     @Override
     protected Answer processImpl(EmptyPayload Payload, Map<String, String> queryParams) {
@@ -36,11 +45,15 @@ public class ClientOrderListHandler extends AbstractRequestHandler<EmptyPayload>
             Configuration fmcfg = FMConfig.getInstance();
             //Armado del template y salida a web (Por cada ruta en la aplicacion)
             StringWriter writer = new StringWriter();
-            Template homeTemplate = fmcfg.getTemplate("home.ftl");
-            lo = Order.findByUser(s.attribute("uid"));
+            Template homeTemplate = fmcfg.getTemplate("clientOrderList.ftl");
+            long uid = s.attribute("uid");
+            u = User.findById(uid).get(0);
+            username = s.attribute("name");
+            orders = Order.findByUser(u);
+            System.out.println("Number orders to display: " + orders.size());
             Map<String, Object> parametros = new HashMap<>();
-            parametros.put("username", s.attribute("name"));
-            parametros.put("orders", lo);
+            parametros.put("username", username);
+            parametros.put("orders", orders);
             homeTemplate.process(parametros, writer);
             return new Answer(200, writer.toString());
         } catch (IOException | TemplateException ex) {

@@ -25,7 +25,7 @@ public class FMConfig {
             Configuration freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_22);
             // Specify the source where the template files come from. Here I set a
             // plain directory for it, but non-file-system sources are possible too:
-            freeMarkerConfig.setDirectoryForTemplateLoading(new File("src/main/resources"));
+            freeMarkerConfig.setDirectoryForTemplateLoading(new File("src/main/resources/templates"));
             // Set the preferred charset template files are stored in. UTF-8 is
             // a good choice in most applications:
             freeMarkerConfig.setDefaultEncoding("UTF-8");

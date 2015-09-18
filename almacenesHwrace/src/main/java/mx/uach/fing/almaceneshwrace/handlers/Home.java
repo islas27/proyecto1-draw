@@ -20,12 +20,12 @@ public class Home {
     
     public static void main(String[] args) {
         
-        User u = new User("a@a.com", "123456", Boolean.FALSE);
+        //User u = new User("a@a.com", "123456", Boolean.FALSE);
         //u.setName("alpha");
-        u.create();
-        u = new User("b@b.com", "qwerty", Boolean.TRUE);
+        //u.create();
+        //u = new User("b@b.com", "qwerty", Boolean.TRUE);
         //u.setName("Omega");
-        u.create();
+        //u.create();
         
         staticFileLocation("/public"); // Static files
         //Code 01: no session

@@ -8,7 +8,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import mx.uach.fing.almaceneshwrace.models.Detail;
 import mx.uach.fing.almaceneshwrace.models.User;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-18T00:10:19")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-18T03:10:23")
 @StaticMetamodel(Order.class)
 public class Order_ { 
 

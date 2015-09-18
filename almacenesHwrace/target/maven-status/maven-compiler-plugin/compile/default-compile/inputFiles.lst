@@ -7,11 +7,14 @@ c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almac
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\handle\NewProductHandler.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\models\ActiveRecord.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\AbstractRequestHandler.java
+c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\FMConfig.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\handle\LoginSessionHandler.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\models\Order.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\payloads\EmptyPayload.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\models\Detail.java
+c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\handle\ListProductHandler.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\payloads\NewProductPayload.java
+c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\handle\ClientOrderListHandler.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\SessionCheck.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\models\User.java
 c:\apps\wamp\www\proyecto1-draw\almacenesHwrace\src\main\java\mx\uach\fing\almaceneshwrace\handlers\handle\NewClientHandler.java
