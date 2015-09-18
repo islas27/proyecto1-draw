@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Order extends ActiveRecord implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -27,7 +27,7 @@ public class Order extends ActiveRecord implements Serializable{
     @Temporal(TemporalType.DATE)
     private Date dateOfDelivery;
 
-    @Column(name = "is_aprroved")
+    @Column(name = "is_approved")
     private Boolean isApproved;
 
     @OneToMany

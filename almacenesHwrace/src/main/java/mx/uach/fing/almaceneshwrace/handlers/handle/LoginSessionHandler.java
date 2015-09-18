@@ -30,17 +30,18 @@ public class LoginSessionHandler extends AbstractRequestHandler<LoginPayload> {
     protected Answer processImpl(LoginPayload Payload, Map<String, String> queryParams) {
         Map<String, String> data = (Map<String, String>) payload.getData();
         lu = User.findByEmail(data.get("email"));
-        System.out.println("Size of lu: " + lu.size());
         if (lu.size() > 0) {
-            System.out.println("Entrada 1");
             u = lu.get(0);
-            System.out.println("User obtenido: " + u.getEmail() + " pass: " + u.getPassword());
-            System.out.println("PASS ingresada en el form: " + data.get("password"));
             if (u.getPassword().equals(data.get("password"))) {
-                System.out.println("Entrada 2");
+                Date date = new  Date();
+                Date date_expiration = (Date) date.clone();
+                date_expiration.setMinutes(date.getMinutes() + 30);
                 s.attribute("user", u.getEmail());
+                s.attribute("name", u.getName());
+                s.attribute("type", u.getIsAdmin());
                 s.attribute("login", true);
-                s.attribute("date_login", new Date());
+                s.attribute("date_login", date);
+                s.attribute("date_expiration",date_expiration);
                 System.out.println(
                         String.format("User %s logged in at date: %s /n",
                                 u.getEmail(), s.attribute("date_login")));

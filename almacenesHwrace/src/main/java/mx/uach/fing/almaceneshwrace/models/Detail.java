@@ -22,7 +22,7 @@ import static mx.uach.fing.almaceneshwrace.models.ActiveRecord.PU;
 public class Detail extends ActiveRecord implements Serializable{
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
     

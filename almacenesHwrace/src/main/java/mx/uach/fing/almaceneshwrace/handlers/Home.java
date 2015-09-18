@@ -18,16 +18,22 @@ public class Home {
     
     public static void main(String[] args) {
         
+        User u = new User("a@a.com", "123456", Boolean.FALSE);
+        //u.setName("alpha");
+        u.create();
+        u = new User("b@b.com", "qwerty", Boolean.TRUE);
+        //u.setName("Omega");
+        u.create();
+        
         staticFileLocation("/public"); // Static files
         get("/login/:EID", new LoginPageHandler());
         post("/inicioSesion", new LoginSessionHandler());
         //get("/registrate/:EID", new RegistrationPageHandler());
         post("/registroCliente", new NewClientHandler());
         
-        before("/cliente/*", (request, response) -> {
-            // ... check if authenticated
-            
-            //response.redirect("/login/01");
+        before("/clients/*", (request, response) -> {
+            if(!SessionCheck.isClientLoggedIn(request))
+                response.redirect("/login/01",303);
         });
         
         //get("/cliente/compras/:CID", new ClientOrderListHandler());
@@ -36,9 +42,8 @@ public class Home {
 	//post("/cliente/registrarCompra", new NewOrderHandler());
         
         before("/admin/*", (request, response) -> {
-            // ... check if authenticated
-            
-            //response.redirect("/login/01");
+            if(!SessionCheck.isAdminLoggedIn(request))
+                response.redirect("/login/01",303);
         });
         
         //get("/admin/pedidos", new OrderListHandler());
@@ -55,7 +60,8 @@ public class Home {
         
         //get("/admin/pedido/:RID");
         //post("/admin/liberarPedido");
-       
+        
+        
     }
     
 }

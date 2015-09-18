@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Product extends ActiveRecord implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -31,7 +31,7 @@ public class Product extends ActiveRecord implements Serializable {
     @Column(name = "price")
     private Float price;
     
-    @Column(name = "categoria")
+    @Column(name = "category")
     private String category;
 
     public Product() {
@@ -202,7 +202,7 @@ public class Product extends ActiveRecord implements Serializable {
         if (!Objects.equals(this.price, other.price)) {
             return false;
         }
-        if (!Objects.equals(this.categoria, other.categoria)) {
+        if (!Objects.equals(this.category, other.category)) {
             return false;
         }
         return true;
