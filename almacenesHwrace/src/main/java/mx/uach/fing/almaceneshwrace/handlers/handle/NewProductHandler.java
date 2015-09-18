@@ -13,7 +13,7 @@ import mx.uach.fing.almaceneshwrace.models.Product;
 public class NewProductHandler extends AbstractRequestHandler<NewProductPayload> {
     
     public NewProductHandler() {
-    	 payload = new NewProductPayload()
+    	 payload = new NewProductPayload();
     }
 
     @Override
