@@ -4,20 +4,23 @@ import java.util.Map;
 import mx.uach.fing.almaceneshwrace.handlers.AbstractRequestHandler;
 import mx.uach.fing.almaceneshwrace.handlers.Answer;
 import mx.uach.fing.almaceneshwrace.handlers.payloads.NewProductPayload;
+import mx.uach.fing.almaceneshwrace.models.Product;
 
 /**
  *
- * @author Jonathan
+ * @author Jesus
  */
 public class NewProductHandler extends AbstractRequestHandler<NewProductPayload> {
     
     public NewProductHandler() {
+    	 payload = new NewProductPayload();
     }
 
     @Override
     protected Answer processImpl(NewProductPayload value, Map<String, String> queryParams) {
-        //Here we do the actual process of the petition, if the payload
-        //is valid, else, we return another response.
+
+        Product p = (Product)this.payload.getData();
+        p.create();
         return new Answer(200);
     }
 }

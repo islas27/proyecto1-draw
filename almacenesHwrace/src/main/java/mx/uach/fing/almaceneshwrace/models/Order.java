@@ -141,7 +141,7 @@ public class Order extends ActiveRecord implements Serializable{
      * @param u
      * @return 
      */
-    public static List<Order> findByUser(Long id){
+    public static List<Order> findById(Long id){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
         EntityManager em = emf.createEntityManager();
         List<Order> lista;

@@ -50,10 +50,12 @@ public class Home {
                 response.redirect("/login/01",303);
         });
         
+
         //get("/admin/orderList", new OrderListHandler());
         //get("/admin/registerProduct");
-        //post("/admin/createProduct", new NewProductHandler());
-        //get("/admin/productList");
+        post("/admin/createProduct", new NewProductHandler());
+        get("/admin/productList", new ListProductHandler());
+
         
         before("/admin/orderStatus/:orderId", (request, response) -> {
             // ... check if there's an order with the provided ID

@@ -13,7 +13,7 @@ import mx.uach.fing.almaceneshwrace.models.Product;
  */
 public class NewProductPayload implements Validable{
     
-    Product product = new Product();
+    Product product;
 
     public NewProductPayload(Map<String, String> data) {
         product = new Product();
@@ -25,7 +25,10 @@ public class NewProductPayload implements Validable{
      */
     @Override
     public boolean isValid() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return !(product.getName() == null || product.getDescription() == null
+                                           || product.getCategory() == null
+                                           || product.getNumberOfStock() == null
+                                           || product.getPrice() == null);
     }
 
     /**
@@ -34,12 +37,16 @@ public class NewProductPayload implements Validable{
      */
     @Override
     public void fillObject(Map<String, String[]> formData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        product.setName(formData.get("name").[0]);
+        product.setDescription(formData.get("description").[0]);
+        product.setCategory(formData.get("category").[0]);
+        product.setNumberOfStock(new Long(formData.get("numberOfStock").[0]));
+        product.setPrice(new Float (formData.get("price").[0]));
     }
 
     @Override
     public Object getData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return This.product;
     }
 
     
