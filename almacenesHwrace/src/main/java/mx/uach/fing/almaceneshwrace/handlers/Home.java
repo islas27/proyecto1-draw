@@ -1,6 +1,8 @@
 package mx.uach.fing.almaceneshwrace.handlers;
 
+import java.util.List;
 import mx.uach.fing.almaceneshwrace.handlers.handle.*;
+import mx.uach.fing.almaceneshwrace.models.Order;
 import mx.uach.fing.almaceneshwrace.models.User;
 import static spark.Spark.before;
 import static spark.Spark.get;
@@ -26,40 +28,42 @@ public class Home {
         u.create();
         
         staticFileLocation("/public"); // Static files
-        get("/login/:EID", new LoginPageHandler());
-        post("/inicioSesion", new LoginSessionHandler());
-        //get("/registrate/:EID", new RegistrationPageHandler());
-        post("/registroCliente", new NewClientHandler());
+        //Code 01: no session
+        //Code 02: wrong user or password
+        get("/login/:errorCode", new LoginPageHandler());
+        post("/loginSession", new LoginSessionHandler());
+        //get("/registration/:errorCode", new RegistrationPageHandler());
+        post("/newClient", new NewClientHandler());
         
         before("/clients/*", (request, response) -> {
             if(!SessionCheck.isClientLoggedIn(request))
                 response.redirect("/login/01",303);
         });
         
-        //get("/cliente/compras/:CID", new ClientOrderListHandler());
-        //get("/cliente/compra/:OID", new ClientOrderHandler());
-        //get("/cliente/nuevaCompra", new OrderPageHandler());
-	//post("/cliente/registrarCompra", new NewOrderHandler());
+        get("/clients/shoppingOrders", new ClientOrderListHandler());
+        //get("/clients/order/:orderId", new ClientOrderHandler());
+        //get("/clients/newOrder", new OrderPageHandler());
+	//post("/clients/createOrder", new NewOrderHandler());
         
         before("/admin/*", (request, response) -> {
             if(!SessionCheck.isAdminLoggedIn(request))
                 response.redirect("/login/01",303);
         });
         
-        //get("/admin/pedidos", new OrderListHandler());
-        //get("/admin/nuevoProducto");
-        //get("/admin/nuevoProducto/:EID");
-        //post("/admin/registrarProducto", new NewProductHandler());
-        get("/admin/productos");
+        //get("/admin/orderList", new OrderListHandler());
+        //get("/admin/registerProduct");
+        //post("/admin/createProduct", new NewProductHandler());
+        //get("/admin/productList");
         
-        before("/admin/pedido/*", (request, response) -> {
+        before("/admin/orderStatus/:orderId", (request, response) -> {
             // ... check if there's an order with the provided ID
-            
             //response.redirect("/login/01");
         });
         
-        //get("/admin/pedido/:RID");
-        //post("/admin/liberarPedido");
+        //get("/admin/orderStatus/:orderId");
+        //post("/admin/processOrder");
+        
+        
     }
     
 }

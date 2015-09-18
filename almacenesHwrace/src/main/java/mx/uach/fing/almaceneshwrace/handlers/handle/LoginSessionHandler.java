@@ -39,6 +39,7 @@ public class LoginSessionHandler extends AbstractRequestHandler<LoginPayload> {
                 s.attribute("user", u.getEmail());
                 s.attribute("name", u.getName());
                 s.attribute("type", u.getIsAdmin());
+                s.attribute("uid", u.getId());
                 s.attribute("login", true);
                 s.attribute("date_login", date);
                 s.attribute("date_expiration",date_expiration);

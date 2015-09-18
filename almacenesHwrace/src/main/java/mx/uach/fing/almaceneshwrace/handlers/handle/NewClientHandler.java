@@ -20,7 +20,8 @@ public class NewClientHandler extends AbstractRequestHandler<NewClientPayload>{
     protected Answer processImpl(NewClientPayload Payload, Map<String, String> queryParams) {
         User c = (User) this.payload.getData();
         c.create();
-        return new Answer(200, "ok");
+        r.redirect("/login.html", 303);
+        return new Answer(200);
     }
     
 }
