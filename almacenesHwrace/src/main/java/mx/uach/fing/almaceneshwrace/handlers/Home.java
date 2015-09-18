@@ -49,7 +49,7 @@ public class Home {
         //get("/admin/pedidos", new OrderListHandler());
         //get("/admin/nuevoProducto");
         //get("/admin/nuevoProducto/:EID");
-        //post("/admin/registrarProducto", new NewProductHandler());
+        post("/admin/registrarProducto", new NewProductHandler());
         get("/admin/productos");
         
         before("/admin/pedido/*", (request, response) -> {
