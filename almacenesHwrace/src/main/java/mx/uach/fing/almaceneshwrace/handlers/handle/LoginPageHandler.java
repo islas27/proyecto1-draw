@@ -17,8 +17,9 @@ public class LoginPageHandler extends AbstractRequestHandler<EmptyPayload>{
 
     @Override
     protected Answer processImpl(EmptyPayload Payload, Map<String, String> queryParams) {
-        return Answer.ok("<!DOCTYPE HTML><head><title>Login</title></head><body><form action='/nuevoProducto' method='post'>"+
-    "<input type='text' name='nombre'/><input type='text' name='cantidad'/><input type='submit' value='Agregar'/></form></body>");
+        //Temp, while we implement error codes
+        r.redirect("/login.html", 300);
+        return new Answer(200);
     }
     
 }

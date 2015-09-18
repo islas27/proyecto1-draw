@@ -18,8 +18,9 @@ public class NewProductHandler extends AbstractRequestHandler<NewProductPayload>
 
     @Override
     protected Answer processImpl(NewProductPayload value, Map<String, String> queryParams) {
+
         Product p = (Product)this.payload.getData();
         p.create();
-        return Answer.ok("ok");
+        return new Answer(200);
     }
 }
