@@ -112,7 +112,7 @@ public class Product extends ActiveRecord implements Serializable {
     /**
      * @param price the precio to set
      */
-    public void setPrecio(Float price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
     

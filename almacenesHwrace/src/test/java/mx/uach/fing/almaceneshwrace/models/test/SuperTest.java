@@ -146,7 +146,7 @@ public class SuperTest {
         p.setCategory("Discos Duros");
         p.setDescription("Sata 150 GB estado solido barato!!!");
         p.setName("Sata 150 GB");
-        p.setPrecio(1500.00f);
+        p.setPrice(1500.00f);
         p.setNumberOfStock(100l);
         p.create();
         

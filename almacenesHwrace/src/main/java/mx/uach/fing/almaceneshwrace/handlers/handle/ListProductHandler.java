@@ -5,10 +5,19 @@
  */
 package mx.uach.fing.almaceneshwrace.handlers.handle;
 
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mx.uach.fing.almaceneshwrace.handlers.AbstractRequestHandler;
 import mx.uach.fing.almaceneshwrace.handlers.Answer;
+import mx.uach.fing.almaceneshwrace.handlers.FMConfig;
 import mx.uach.fing.almaceneshwrace.handlers.payloads.EmptyPayload;
+import mx.uach.fing.almaceneshwrace.models.Product;
 
 /**
  *

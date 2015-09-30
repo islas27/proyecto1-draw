@@ -15,7 +15,7 @@ public class NewProductPayload implements Validable{
     
     Product product;
 
-    public NewProductPayload(Map<String, String> data) {
+    public NewProductPayload() {
         product = new Product();
     }
 
@@ -37,16 +37,16 @@ public class NewProductPayload implements Validable{
      */
     @Override
     public void fillObject(Map<String, String[]> formData) {
-        product.setName(formData.get("name").[0]);
-        product.setDescription(formData.get("description").[0]);
-        product.setCategory(formData.get("category").[0]);
-        product.setNumberOfStock(new Long(formData.get("numberOfStock").[0]));
-        product.setPrice(new Float (formData.get("price").[0]));
+        product.setName(formData.get("name")[0]);
+        product.setDescription(formData.get("description")[0]);
+        product.setCategory(formData.get("category")[0]);
+        product.setNumberOfStock(new Long(formData.get("numberOfStock")[0]));
+        product.setPrice(new Float (formData.get("price")[0]));
     }
 
     @Override
     public Object getData() {
-        return This.product;
+        return this.product;
     }
 
     
